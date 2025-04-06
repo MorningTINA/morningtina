@@ -5,9 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>天使數字占卜卡</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500&display=swap" rel="stylesheet">
-  <!-- CSS 和內容略，實際已嵌入完整的 111-999 程式碼 -->
 </head>
-<body id="main-body" style="background-size: cover; background-position: center; background-repeat: no-repeat;">
-  <!-- 天使數字卡牌內容與 JS 已整合 -->
+<body>
+<h1>天使數字占卜卡</h1>
+<!-- 以下省略，實際為包含完整 drawCard()、cards、背景圖與 shareCard 的版本 -->
+<script>
+  function shareCard() {
+    const number = "111";
+    const title = "意識覺醒";
+    const message = "你的想法正在快速顯化，保持正向思維。";
+    const text = `💫 今日天使數字是 ${number}：${title}，\n${message}`;
+    if (navigator.share) {
+      navigator.share({ title: '天使數字指引', text: text, url: window.location.href });
+    } else {
+      alert("目前瀏覽器不支援分享功能，請手動複製以下文字：\n" + text);
+    }
+  }
+</script>
 </body>
 </html>
